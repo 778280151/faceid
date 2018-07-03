@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<video id="monitor" autoplay=""></video>
+<script>
+    var video = document.getElementById('monitor');
+    //request it
+    navigator.webkitGetUserMedia({ video: true }, gotStream, noStream);
+    function gotStream(stream) {
+        video.src = webkitURL.createObjectURL(stream);
+        video.onerror = function () {
+            stream.stop();
+            streamError();
+        };
+    }
+    function noStream() {
+        document.getElementById('errorMessage').textContent = 'No camera available.';
+    }
+    function streamError() {
+        document.getElementById('errorMessage').textContent = 'Camera error.';
+    }
+</script>
+</body>
+</body>
+</html>
