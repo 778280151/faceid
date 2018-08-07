@@ -20,7 +20,7 @@ public class Face {
     static final String API_KEY = "4jU5O16wo0pgu3pNb3MrDzei";
     static final String SECRET_KEY = "xLhGsdnRGg7qwjdpCD6xY1RQK2iFjU8G";
 
-    public static void main(String[] args) {
+    public  void zhuyao() {
         // 初始化一个AipFace
         AipFace client = new AipFace(APP_ID, API_KEY, SECRET_KEY);
 
